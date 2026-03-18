@@ -8,18 +8,11 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --bg:#0c0c0e;
-  --bg2:#111114;
-  --bg3:#161619;
-  --border:#222228;
-  --border2:#2a2a32;
-  --accent:#7c6ef5;
-  --accent2:#a394ff;
-  --green:#3ecf8e;
-  --text:#e8e8f0;
-  --muted:#6b6b80;
-  --muted2:#4a4a5a;
-  --white:#ffffff;
+  --bg:#0c0c0e;--bg2:#111114;--bg3:#161619;
+  --border:#222228;--border2:#2a2a32;
+  --accent:#7c6ef5;--accent2:#a394ff;
+  --green:#3ecf8e;--text:#e8e8f0;
+  --muted:#6b6b80;--muted2:#4a4a5a;--white:#ffffff;
 }
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Geist Sans','Geist Fallback',system-ui,sans-serif;font-weight:400;overflow-x:hidden;line-height:1.6;}
@@ -30,11 +23,11 @@ body{background:var(--bg);color:var(--text);font-family:'Geist Sans','Geist Fall
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,12,14,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
-.nav-logo{font-family:'Geist Sans','Geist Fallback',system-ui,sans-serif;font-weight:800;font-size:1rem;color:var(--white);letter-spacing:.02em;}
+.nav-logo{font-family:'Geist Sans','Geist Fallback',system-ui,sans-serif;font-weight:800;font-size:1rem;color:var(--white);}
 .nav-logo span{color:var(--accent);}
 .nav-links{display:flex;gap:2rem;list-style:none;}
 .nav-links a{font-size:.78rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .25s;}
-.nav-links a:hover,.nav-links a.active{color:var(--text);}
+.nav-links a:hover{color:var(--text);}
 .nav-cta{padding:.42rem 1.1rem;background:var(--accent);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:background .25s;}
 .nav-cta:hover{background:var(--accent2);}
 
@@ -48,7 +41,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,12,14,0.8
 .hero-role{font-size:1.05rem;color:var(--muted);font-weight:400;margin-bottom:1.4rem;}
 .hero-desc{font-size:.92rem;color:var(--muted);max-width:580px;line-height:1.85;margin-bottom:2.2rem;}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;}
-.btn-primary{padding:.68rem 1.6rem;background:var(--accent);color:#fff;font-family:'Geist Sans','Geist Fallback',system-ui,sans-serif;font-size:.8rem;font-weight:600;text-decoration:none;border-radius:5px;border:none;cursor:pointer;transition:all .25s;letter-spacing:.02em;display:inline-block;}
+.btn-primary{padding:.68rem 1.6rem;background:var(--accent);color:#fff;font-family:'Geist Sans','Geist Fallback',system-ui,sans-serif;font-size:.8rem;font-weight:600;text-decoration:none;border-radius:5px;border:none;cursor:pointer;transition:all .25s;display:inline-block;}
 .btn-primary:hover{background:var(--accent2);transform:translateY(-1px);}
 .btn-ghost{padding:.68rem 1.6rem;background:transparent;color:var(--text);font-family:'Geist Sans','Geist Fallback',system-ui,sans-serif;font-size:.8rem;font-weight:500;text-decoration:none;border-radius:5px;border:1px solid var(--border2);cursor:pointer;transition:all .25s;display:inline-block;}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
@@ -63,11 +56,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,12,14,0.8
 .eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;}
 .sec-title{font-family:'Geist Sans','Geist Fallback',system-ui,sans-serif;font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:800;color:var(--white);margin-bottom:.6rem;}
 .sec-sub{font-size:.88rem;color:var(--muted);max-width:560px;line-height:1.75;}
-.divider{border:none;border-top:1px solid var(--border);max-width:1100px;margin:0 auto;}
 .full-divider{border:none;border-top:1px solid var(--border);}
 
-/* SKILLS GRID */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
 .skill-card{background:var(--bg2);padding:2rem 1.8rem;transition:background .3s;}
 .skill-card:hover{background:var(--bg3);}
 .sk-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.3rem;}
@@ -75,26 +67,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,12,14,0.8
 .sk-icon{font-size:1.25rem;}
 .sk-items{display:flex;flex-direction:column;gap:.55rem;}
 .sk-row{display:flex;align-items:center;}
-.sk-name{font-size:.78rem;color:var(--muted);font-weight:500;width:140px;flex-shrink:0;}
+.sk-name{font-size:.78rem;color:var(--muted);font-weight:500;width:200px;flex-shrink:0;}
 .sk-bar-bg{flex:1;height:2px;background:var(--border2);border-radius:2px;overflow:hidden;}
 .sk-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
 .sk-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1.2rem;}
 .stag{font-size:.65rem;padding:.18rem .5rem;border:1px solid var(--border2);color:var(--muted2);border-radius:3px;}
 
-/* PROJECTS GRID */
+/* PROJECTS */
 .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
 .proj-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .3s,transform .35s;cursor:pointer;}
 .proj-card:hover{border-color:var(--accent);transform:translateY(-5px);}
 .proj-thumb{height:190px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.proj-thumb-bg{position:absolute;inset:0;transition:transform .55s;}
-.proj-card:hover .proj-thumb-bg{transform:scale(1.05);}
-.th1{background:linear-gradient(135deg,#0f1b2d 0%,#163352 60%,rgba(124,110,245,.25) 100%);}
-.th2{background:linear-gradient(135deg,#0d2018 0%,#0f3825 60%,rgba(62,207,142,.25) 100%);}
-.th3{background:linear-gradient(135deg,#1a0a2e 0%,#2a0f5e 60%,rgba(200,156,245,.2) 100%);}
-.th4{background:linear-gradient(135deg,#1a1005 0%,#362510 60%,rgba(255,180,0,.22) 100%);}
-.th5{background:linear-gradient(135deg,#0a1522 0%,#0e2540 60%,rgba(33,150,200,.25) 100%);}
-.th6{background:linear-gradient(135deg,#1a0a0a 0%,#380f0f 60%,rgba(245,100,80,.2) 100%);}
-.proj-icon{font-size:3.2rem;opacity:.32;position:relative;z-index:1;}
 .proj-num{position:absolute;bottom:.7rem;right:1rem;font-family:'Geist Sans','Geist Fallback',system-ui,sans-serif;font-size:4rem;font-weight:800;color:rgba(255,255,255,.04);line-height:1;z-index:0;}
 .proj-body{padding:1.5rem;}
 .proj-tags{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.8rem;}
@@ -109,7 +92,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,12,14,0.8
 .proj-desc{font-size:.8rem;color:var(--muted);line-height:1.7;}
 .proj-foot{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:.9rem;border-top:1px solid var(--border);}
 .proj-client{font-size:.7rem;color:var(--muted2);}
-.proj-link{font-size:.7rem;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:.3rem;transition:gap .25s;}
+.proj-link{font-size:.7rem;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:.3rem;transition:gap .25s;text-decoration:none;}
 .proj-card:hover .proj-link{gap:.55rem;}
 
 /* EXPERIENCE */
@@ -156,11 +139,11 @@ footer{border-top:1px solid var(--border);}
 /* ANIMATIONS */
 .js-ready .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.in{opacity:1 !important;transform:none !important;}
-.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .skills-grid{grid-template-columns:1fr 1fr;}
+  .skills-grid{grid-template-columns:1fr;}
   .projects-grid{grid-template-columns:1fr;}
   .exp-grid{grid-template-columns:1fr;gap:3rem;}
   .contact-grid{grid-template-columns:1fr;gap:3rem;}
@@ -170,7 +153,6 @@ footer{border-top:1px solid var(--border);}
 }
 @media(max-width:600px){
   .nav-links{display:none;}
-  .skills-grid{grid-template-columns:1fr;}
   .hero-stats{flex-direction:column;gap:1.5rem;}
   .hero-wrap h1{font-size:2.4rem;}
 }
@@ -223,6 +205,7 @@ footer{border-top:1px solid var(--border);}
     <p class="sec-sub">Complete toolkit across web development, WordPress and modern web technologies.</p>
   </div>
   <div class="skills-grid">
+
     <div class="skill-card reveal">
       <div class="sk-head"><div class="sk-title">Frontend Development</div><div class="sk-icon">🌐</div></div>
       <div class="sk-items">
@@ -233,6 +216,7 @@ footer{border-top:1px solid var(--border);}
       </div>
       <div class="sk-tags"><span class="stag">HTML5</span><span class="stag">CSS3</span><span class="stag">JavaScript</span><span class="stag">Bootstrap</span></div>
     </div>
+
     <div class="skill-card reveal d1">
       <div class="sk-head"><div class="sk-title">WordPress</div><div class="sk-icon">🔷</div></div>
       <div class="sk-items">
@@ -243,7 +227,8 @@ footer{border-top:1px solid var(--border);}
       </div>
       <div class="sk-tags"><span class="stag">WordPress</span><span class="stag">Elementor</span><span class="stag">WooCommerce</span></div>
     </div>
-    <div class="skill-card reveal d2">
+
+    <div class="skill-card reveal">
       <div class="sk-head"><div class="sk-title">Go High Level</div><div class="sk-icon">⚡</div></div>
       <div class="sk-items">
         <div class="sk-row"><span class="sk-name">Funnel Development</span><div class="sk-bar-bg"><div class="sk-bar" data-w="95"></div></div></div>
@@ -257,7 +242,8 @@ footer{border-top:1px solid var(--border);}
       </div>
       <div class="sk-tags"><span class="stag">GoHighLevel</span><span class="stag">Automation</span><span class="stag">CRM</span></div>
     </div>
-    <div class="skill-card reveal">
+
+    <div class="skill-card reveal d1">
       <div class="sk-head"><div class="sk-title">Tools &amp; Integrations</div><div class="sk-icon">🧩</div></div>
       <div class="sk-items">
         <div class="sk-row"><span class="sk-name">HubSpot to GHL</span><div class="sk-bar-bg"><div class="sk-bar" data-w="88"></div></div></div>
@@ -271,7 +257,8 @@ footer{border-top:1px solid var(--border);}
       </div>
       <div class="sk-tags"><span class="stag">GHL</span><span class="stag">Zapier</span><span class="stag">Integrations</span></div>
     </div>
-    <div class="skill-card reveal d1">
+
+    <div class="skill-card reveal">
       <div class="sk-head"><div class="sk-title">Backend Development</div><div class="sk-icon">⚙️</div></div>
       <div class="sk-items">
         <div class="sk-row"><span class="sk-name">PHP</span><div class="sk-bar-bg"><div class="sk-bar" data-w="88"></div></div></div>
@@ -281,7 +268,8 @@ footer{border-top:1px solid var(--border);}
       </div>
       <div class="sk-tags"><span class="stag">PHP</span><span class="stag">CodeIgniter</span><span class="stag">MySQL</span><span class="stag">SQL</span></div>
     </div>
-    <div class="skill-card reveal d2">
+
+    <div class="skill-card reveal d1">
       <div class="sk-head"><div class="sk-title">Quality &amp; Testing</div><div class="sk-icon">🧪</div></div>
       <div class="sk-items">
         <div class="sk-row"><span class="sk-name">SQA</span><div class="sk-bar-bg"><div class="sk-bar" data-w="78"></div></div></div>
@@ -291,6 +279,7 @@ footer{border-top:1px solid var(--border);}
       </div>
       <div class="sk-tags"><span class="stag">SQA</span><span class="stag">SQL</span><span class="stag">MySQL</span></div>
     </div>
+
   </div>
 </div>
 </div>
@@ -306,6 +295,7 @@ footer{border-top:1px solid var(--border);}
     <p class="sec-sub">Selected projects completed for clients showcasing diverse expertise and capabilities.</p>
   </div>
   <div class="projects-grid">
+
     <div class="proj-card reveal">
       <div class="proj-thumb">
         <img src="enviropeel.jpg" alt="Enviropeel" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
@@ -318,6 +308,7 @@ footer{border-top:1px solid var(--border);}
         <div class="proj-foot"><div class="proj-client">Industrial / B2B</div><a href="https://enviropeel.com/" target="_blank" class="proj-link">View Project →</a></div>
       </div>
     </div>
+
     <div class="proj-card reveal d1">
       <div class="proj-thumb">
         <img src="global.jpg" alt="Global Air Entertainment" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
@@ -330,6 +321,7 @@ footer{border-top:1px solid var(--border);}
         <div class="proj-foot"><div class="proj-client">Entertainment / Services</div><a href="https://globalairentertainment.com/" target="_blank" class="proj-link">View Project →</a></div>
       </div>
     </div>
+
     <div class="proj-card reveal">
       <div class="proj-thumb">
         <img src="revaayat.jpg" alt="Revaayat" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
@@ -342,6 +334,7 @@ footer{border-top:1px solid var(--border);}
         <div class="proj-foot"><div class="proj-client">E-Commerce / Gifts</div><a href="https://revaayat.com/" target="_blank" class="proj-link">View Project →</a></div>
       </div>
     </div>
+
     <div class="proj-card reveal d1">
       <div class="proj-thumb">
         <img src="kara.jpg" alt="KARA Advisors" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
@@ -351,9 +344,10 @@ footer{border-top:1px solid var(--border);}
         <div class="proj-tags"><span class="ptag t-ghl">GHL</span><span class="ptag t-design">Custom</span><span class="ptag t-wp">Responsive</span></div>
         <div class="proj-title">KARA Advisors</div>
         <p class="proj-desc">AI sales automation and marketing advisory platform with funnels, CRM pipelines, benchmarking tools and AI playbook resources.</p>
-        <div class="proj-foot"><div class="proj-client">AI / Sales & Marketing</div><a href="https://karaadvisors.net/" target="_blank" class="proj-link">View Project →</a></div>
+        <div class="proj-foot"><div class="proj-client">AI / Sales &amp; Marketing</div><a href="https://karaadvisors.net/" target="_blank" class="proj-link">View Project →</a></div>
       </div>
     </div>
+
     <div class="proj-card reveal">
       <div class="proj-thumb">
         <img src="bdu.jpg" alt="BDU Elite" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
@@ -366,6 +360,7 @@ footer{border-top:1px solid var(--border);}
         <div class="proj-foot"><div class="proj-client">Sports / Athletics</div><a href="https://bduelite.org/" target="_blank" class="proj-link">View Project →</a></div>
       </div>
     </div>
+
     <div class="proj-card reveal d1">
       <div class="proj-thumb">
         <img src="foodstream.jpg" alt="FoodStream LEARN" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
@@ -378,6 +373,7 @@ footer{border-top:1px solid var(--border);}
         <div class="proj-foot"><div class="proj-client">Education / Non-profit</div><a href="https://education.foodstreamnetwork.com/" target="_blank" class="proj-link">View Project →</a></div>
       </div>
     </div>
+
   </div>
 </div>
 </div>
@@ -393,6 +389,7 @@ footer{border-top:1px solid var(--border);}
     <p class="sec-sub">Professional background and academic qualifications.</p>
   </div>
   <div class="exp-grid">
+
     <div class="reveal">
       <div class="exp-head">💼 Work Experience</div>
       <div class="timeline">
@@ -425,6 +422,7 @@ footer{border-top:1px solid var(--border);}
         </div>
       </div>
     </div>
+
     <div class="reveal d2">
       <div class="exp-head">🎓 Education</div>
       <div class="timeline">
@@ -437,15 +435,16 @@ footer{border-top:1px solid var(--border);}
             <div class="tl-desc">Computer Science degree with focus on web technologies, software engineering, database management and modern programming practices.</div>
           </div>
         </div>
-
       </div>
     </div>
+
   </div>
 </div>
 </div>
 
-<!-- CONTACT -->
 <div class="full-divider"></div>
+
+<!-- CONTACT -->
 <div class="contact-bg" id="contact">
 <div class="contact-inner">
   <div class="section-header reveal">
@@ -459,7 +458,7 @@ footer{border-top:1px solid var(--border);}
       <div class="c-item"><div class="c-icon">💼</div><div><div class="c-label">LinkedIn</div><div class="c-val"><a href="https://www.linkedin.com/in/muhammad-jahangir-581706184/" target="_blank" style="color:var(--text);text-decoration:none;">View Profile →</a></div></div></div>
       <div class="cta-box">
         <p><strong style="color:var(--white);">Ready to Start Your Project?</strong><br>Let's collaborate and bring your ideas to life with cutting-edge web solutions.</p>
-        <a href="/cdn-cgi/l/email-protection#7913181118171e100b570e1c1b1d1c0f1c1516091c0b391e14181015571a1614" class="btn-primary">📩 Send Me an Email</a>
+        <a href="mailto:jahangir.webdeveloper@gmail.com" class="btn-primary">📩 Send Me an Email</a>
       </div>
     </div>
     <div class="reveal d2">
@@ -491,22 +490,15 @@ footer{border-top:1px solid var(--border);}
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Add js-ready so reveal animation only applies when JS works
+<script>
 document.documentElement.classList.add('js-ready');
-
-// Scroll reveal
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
 },{threshold:0, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// Fallback: show everything after 800ms in case observer doesn't fire
 setTimeout(() => {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
 }, 800);
-
-// Skill bars
 const barObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting){
@@ -517,12 +509,17 @@ const barObs = new IntersectionObserver(entries => {
   });
 },{threshold:0});
 document.querySelectorAll('.skill-card').forEach(c => barObs.observe(c));
-
-// Nav active highlight
 const secs = document.querySelectorAll('[id]');
 const navAs = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',()=>{
   let cur='';
   secs.forEach(s=>{ if(window.scrollY >= s.offsetTop - 120) cur=s.id; });
   navAs.forEach(a=>{
-    const active = a.g
+    const active = a.getAttribute('href')==='#'+cur;
+    a.style.color = active ? 'var(--text)' : '';
+    a.style.fontWeight = active ? '600' : '';
+  });
+});
+</script>
+</body>
+</html>
